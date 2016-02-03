@@ -53,7 +53,8 @@ $api->version('v1', function ($api) {
 
 		// Dogs! All routes in here are protected and thus need a valid token
 		//$api->group( [ 'protected' => true, 'middleware' => 'jwt.refresh' ], function ($api) {
-		$api->group( [ 'middleware' => 'jwt.refresh' ], function ($api) {
+		//$api->group( [ 'middleware' => 'jwt.refresh' ], function ($api) {
+            $api->version('v1', function ($api) {
 
 			$api->get('users/me', 'AuthController@me');
 			$api->get('validate_token', 'AuthController@validateToken');
